@@ -30,6 +30,10 @@ public class MessageConsumerTest {
 	@Pact(provider = "userservice", consumer = "userclient")
 	public MessagePact userCreatedMessagePact(MessagePactBuilder builder) {
 		throw new NotImplementedException("not implemented yet");
+
+		//construct PactDslJsonBody
+
+		//return PACT
 	}
 
 	@Test
