@@ -8,6 +8,7 @@ import au.com.dius.pact.consumer.Pact;
 import au.com.dius.pact.consumer.PactVerification;
 import au.com.dius.pact.consumer.dsl.PactDslJsonBody;
 import au.com.dius.pact.model.v3.messaging.MessagePact;
+import org.apache.commons.lang3.NotImplementedException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,19 +29,7 @@ public class MessageConsumerTest {
 
 	@Pact(provider = "userservice", consumer = "userclient")
 	public MessagePact userCreatedMessagePact(MessagePactBuilder builder) {
-		PactDslJsonBody body = new PactDslJsonBody();
-		body.stringType("messageUuid", "123");
-		body.object("user")
-						.numberType("id", 42L)
-						.stringType("name", "Zaphod Beeblebrox")
-						.closeObject();
-
-		// @formatter:off
-		return builder
-						.expectsToReceive("a user created message")
-						.withContent(body)
-						.toPact();
-		// @formatter:on
+		throw new NotImplementedException("not implemented yet");
 	}
 
 	@Test
